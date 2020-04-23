@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "commonjs",
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "strictBindCallApply": true,
+    "noImplicitReturns": true,
+    "experimentalDecorators": true,
+    "downlevelIteration": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "sourceRoot": "./src",
+    "declaration": true,
+    "sourceMap": true,
+    "baseUrl": "./src",
+  }
+}

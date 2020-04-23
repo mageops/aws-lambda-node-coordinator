@@ -1,0 +1,18 @@
+os: linux
+language: generic
+
+services:
+  - docker
+
+script:
+  - ./build.sh
+
+deploy:
+  - provider: releases
+    token: $GITHUB_OAUTH_TOKEN
+    file_glob: true
+    file: "dist/lambda.zip"
+    skip_cleanup: true
+    cleanup: false
+    on:
+      tags: true
