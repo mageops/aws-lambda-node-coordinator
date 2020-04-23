@@ -9,7 +9,7 @@ script:
 
 deploy:
   - provider: releases
-    token: $GITHUB_OAUTH_TOKEN
+    api_key: $GITHUB_OAUTH_TOKEN
     file_glob: true
     file: "dist/lambda.zip"
     skip_cleanup: true
