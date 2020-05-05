@@ -1,5 +1,5 @@
 import {EC2} from 'aws-sdk';
-import {exactTag, except, flatten, instanceAge, namedTag} from 'utils';
+import {exactTag, except, flatten, instanceAge, namedTag, instanceState} from 'utils';
 
 import {EC2Facade} from './ec2-facade';
 
@@ -56,6 +56,7 @@ class CreateTags {
             (reservations.Reservations ?? []).map(r => r.Instances)
             .filter((i): i is EC2.InstanceList => !!i)
             .reduce(flatten, [])
+            .filter(instanceState("running"))
             .sort(instanceAge);
 
         const [oldest, ...rest] = instances;

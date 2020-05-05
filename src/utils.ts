@@ -4,6 +4,10 @@ export function flatten<T>(acc: T[], item: T[]): T[] {
     return [...acc, ...item];
 }
 
+export function instanceState(state: EC2.InstanceStateName): (item: EC2.Instance) => boolean {
+    return (item) => item.State?.Name === state;
+}
+
 export function instanceAge(a: EC2.Instance, b: EC2.Instance): number {
     // ?? is not formatted correctly
     // clang-format off
