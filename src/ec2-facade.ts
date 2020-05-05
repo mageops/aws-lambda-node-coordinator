@@ -44,7 +44,7 @@ export class EC2Facade {
         if (!id) {
             throw Error('InstanceId is missing');
         }
-        console.log(`Creating tags for ec2: ${instance}: ${JSON.stringify(tags)}`);
+        console.log(`Creating tags for ec2: ${id}: ${JSON.stringify(tags)}`);
         return this.createTags({
             Resources: [id],
             Tags: tags,
@@ -56,7 +56,7 @@ export class EC2Facade {
         if (!id) {
             throw Error('InstanceId is missing');
         }
-        console.log(`Deleting tags for ec2: ${instance}: ${JSON.stringify(tags)}`);
+        console.log(`Deleting tags for ec2: ${id}: ${JSON.stringify(tags)}`);
         return this.deleteTags({
             Resources: [id],
             Tags: tags,
