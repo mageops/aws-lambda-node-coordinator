@@ -4,7 +4,7 @@ import {exactTag, except, flatten, instanceAge, namedTag, instanceState} from 'u
 import {EC2Facade} from './ec2-facade';
 
 const cronTagName = 'Cron';
-const cronTagValue = 'Present';
+const cronTagValue = 'yes';
 
 class CreateTags {
     private project: string;
